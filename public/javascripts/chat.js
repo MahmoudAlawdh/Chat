@@ -23,6 +23,7 @@ $(document).ready(function() {
   socket.on("chat", function(msg){
     console.log(msg)
     $('.messages').append($('<a class="list-group-item">').text(msg));
+    window.scrollTo(0, $('.msgs')[0].scrollHeight); // values are x,y-offset
   });
 
 
