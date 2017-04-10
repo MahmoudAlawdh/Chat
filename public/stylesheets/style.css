@@ -1,0 +1,46 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: gray;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.login {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+}
+.login form input[type=submit] {
+  width : 100%
+}
+.login form input(type=text){
+  width:100%
+}
+.chat input[type=text]{
+
+  position: fixed;
+  padding: 1px;
+  bottom: 0;
+  width: 80%;
+  height: 8%;
+  border: 0;
+  left: 0;
+}
+.chat{
+  visibility: hidden;
+}
+.chat #s {
+  position: fixed;
+  background-color: green;
+  bottom: 0;
+  right:0;
+  width:20%;
+  height:8%;
+}
