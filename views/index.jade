@@ -2,6 +2,9 @@ extends layout
 
 block content
 
+
+    
+    
   .login
       form.loginForm(action="")
         .form-group
@@ -10,7 +13,9 @@ block content
           input#Channel.form-control(type="text",placeholder="Channel",required)
           br  
           input(type="submit" class="btn btn-primary")
-  .msgs          
+  .msgs  
+    //- video(  autoplay loop)
+      source(src="/images/v2.mp4", type="video/mp4")        
     ul.messages
     
   .chat

@@ -8,6 +8,7 @@ $(document).ready(function() {
     $("body").css("background-color","white");
     $(".login").hide()
     $(".chat").css("visibility","visible");
+    $(".msgs").css("visibility","visible");
     return false
   })
 
@@ -23,12 +24,12 @@ $(document).ready(function() {
   socket.on("chat", function(msg){
     console.log(msg)
     if(msg.hasOwnProperty("msg")){
-    $('.messages').append($('<a class="list-group-item">').text(msg.username+":"+msg.msg));
+    $('.messages').append($('<a class="list-group-item" >').text(msg.username+":"+msg.msg));
   }
   else{
-    $('.messages').append($('<a class="list-group-item">').text(msg));
+    $('.messages').append($('<a class="list-group-item" >').text(msg));
   }
-    window.scrollTo(0, $('.msgs')[0].scrollHeight); // values are x,y-offset
+    $('.msgs').scrollTop($('.msgs')[0].scrollHeight)
   });
 
 
