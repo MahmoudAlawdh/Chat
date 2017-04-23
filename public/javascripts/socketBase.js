@@ -31,7 +31,10 @@ module.exports = function (io) {
         if(socket.name == undefined){
           socket.name = "Anonymous"
         }
-        io.in(socket.room).emit('chat', socket.name+":"+msg.msg);
+        response = {}
+        response.username = socket.name
+        response.msg = msg.msg
+        io.in(socket.room).emit('chat', response);
       })
       socket.on('join', function(room)
       {

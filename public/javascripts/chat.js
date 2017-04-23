@@ -22,7 +22,12 @@ $(document).ready(function() {
 
   socket.on("chat", function(msg){
     console.log(msg)
+    if(msg.hasOwnProperty("msg")){
+    $('.messages').append($('<a class="list-group-item">').text(msg.username+":"+msg.msg));
+  }
+  else{
     $('.messages').append($('<a class="list-group-item">').text(msg));
+  }
     window.scrollTo(0, $('.msgs')[0].scrollHeight); // values are x,y-offset
   });
 
