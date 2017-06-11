@@ -2,8 +2,8 @@ var socket = io();
 
 $(document).ready(function() {
   $(".loginForm").submit(function(){
-    var Login = {name:$("#Username").val(),join:$('#Channel').val()}
-    console.log(Login)
+    var Login = {name:$("#Username").val(),join:$('#Channel').val(),playerID:$('#playerNumber').val()}
+
     socket.emit('join', Login);
     $("body").css("background-color","white");
     $(".login").hide()

@@ -34,14 +34,17 @@ module.exports = function (io) {
         response = {}
         response.username = socket.name
         response.msg = msg.msg
+        response.playerID = socket.playerID
+        console.log("This is Response :" + response)
         io.in(socket.room).emit('chat', response);
       })
       socket.on('join', function(room)
       {
-
             socket.leave(socket.room)
             socket.name = room.name;
             socket.room = room.join;
+            socket.playerID = room.playerID
+            console.log("This is Join :" + socket)
             socket.join(socket.room);
             io.in(socket.room).emit('chat', socket.name + " Has joined");
       })
